@@ -3,7 +3,6 @@
 <html lang="en">
 <head>
     <title>首页</title>
-    <link rel="stylesheet" href="<%=request.getContextPath()%>/css/bootstrap/bootstrap.min.css" />
     <script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery/jquery-1.9.1.js"></script>
     <script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery/jquery.validate.js"></script>
     <script type="text/javascript">
@@ -11,7 +10,7 @@
     </script>
     <script type="text/javascript" src="<%=request.getContextPath()%>/js/bootstrap/bootstrap.min.js"></script>
     <script type="text/javascript" src="<%=request.getContextPath()%>/js/base/home.js"></script>
-    <link>
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/css/bootstrap/bootstrap.min.css" />
 </head>
 <body>
 	<div class="container">

@@ -1,5 +1,5 @@
 jQuery(document).ready(function() {
-	$("#brand_add_form").validate({
+	$("#brand_edit_form").validate({
 		rules:{
 			name:{required:true}
 		},
@@ -21,10 +21,10 @@ jQuery(document).ready(function() {
  */
 function saveBrand(){
 	$.ajax({
-		type: "POST",
+		type: "PUT",
 		datatype: "json",
 		url: cPath+"/brands" ,
-		data: $("#brand_add_form").serialize(),
+		data: $("#brand_edit_form").serialize(),
 		timeout: 5000,
 		async: false,
 		error: function (res) {
@@ -33,7 +33,7 @@ function saveBrand(){
 		success: function (res) {
 			alert("保存成功");
 			brandList();
-			$("#brand_add_model").modal("hide");
+			$("#brand_edit_model").modal("hide");
 		}
 	});
 }

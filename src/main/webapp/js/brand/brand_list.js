@@ -2,6 +2,9 @@ jQuery(document).ready(function() {
 	brandList();
 })
 
+/**
+ * 品牌列表
+ */
 function brandList(){
 	$.ajax({
 		type: "GET",

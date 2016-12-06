@@ -42,5 +42,9 @@ public class BrandService {
 	public Brand findOneById(Long id) {
 		return brandRepository.findOne(id);
 	}
+
+	public void delete(Long id) {
+		brandRepository.delete(id);
+	}
 	
 }

@@ -20,7 +20,8 @@ function brandList(){
 			$("#tableList").html("");
 			$.each(res,function(index,val){
 				$("#tableList").append("<tr><td>"+(index+1)+"</td><td>"+val.name+"</td>" +
-						"<td>"+val.description+"</td><td><a onclick=\"brandEdit("+val.id+")\">编辑</a>&nbsp;&nbsp;<a href=\"#\">删除</a></td></tr>");
+						"<td>"+val.description+"</td>" +
+								"<td><a onclick=\"brandEdit("+val.id+")\">编辑</a>&nbsp;&nbsp;<a onclick=\"deleteBrandById("+val.id+")\">删除</a></td></tr>");
 			});
 		}
 	});
@@ -45,6 +46,26 @@ function brandEdit(id){
 			$("#brand_edit_name").val(request.name);
 			$("#brand_edit_description").val(request.description);
 			$("#brand_edit_model").modal("show");
+		}
+	});
+}
+
+/**
+ * 删除品牌
+ * @param id
+ */
+function deleteBrandById(id){
+	$.ajax({
+		type: "DELETE",
+		datatype: "json",
+		url:cPath+"/brands/"+id,
+		timeout: 5000,
+		async: false,
+		error: function (request) {
+			alert(request.responseText);
+		},
+		success: function (request) {
+			brandList();
 		}
 	});
 }

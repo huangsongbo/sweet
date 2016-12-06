@@ -49,4 +49,10 @@ public class BrandRest {
 		return brandService.update(brand);
 	}
 	
+	@RequestMapping(value="/{id}",method=RequestMethod.DELETE)
+	public Object delete(@PathVariable("id") Long id){
+		brandService.delete(id);
+		return new ResponseEntity<String>("删除成功", HttpStatus.OK);
+	}
+	
 }

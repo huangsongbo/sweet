@@ -8,7 +8,7 @@ jQuery(document).ready(function() {
 		},
 		submitHandler: function (form) {
 			//alert("提交成功");
-			saveBrand();
+			updateBrand();
         },
         errorPlacement: function(error, element) {
             error.appendTo(element.parent());  
@@ -19,7 +19,7 @@ jQuery(document).ready(function() {
 /**
  * 保存品牌
  */
-function saveBrand(){
+function updateBrand(){
 	$.ajax({
 		type: "PUT",
 		datatype: "json",

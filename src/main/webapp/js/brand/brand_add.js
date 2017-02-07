@@ -7,7 +7,7 @@ jQuery(document).ready(function() {
 			name:{required:"请输入品牌名称"}
 		},
 		submitHandler: function (form) {
-			//alert("提交成功");
+			/*alert("提交成功");*/
 			saveBrand();
         },
         errorPlacement: function(error, element) {

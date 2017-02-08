@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<script type="text/javascript" src="<%=request.getContextPath()%>/js/product/product_add.js"></script>
 <div class="modal-content">
 	<div class="modal-header">
 		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
@@ -16,7 +17,9 @@
 			<tr style="height: 50px">
 				<td style="width: 100px">品牌:</td>
 				<td style="width: 100px">
-					<select class="form-control"><option>test1</option><option>test2</option></select>
+					<select class="form-control" id="AddPageBrandSelect">
+					<!-- <option>test1</option><option>test2</option> -->
+					</select>
 				</td>
 			</tr>
 			<tr style="height: 50px">

@@ -28,10 +28,18 @@ function updateBrand(){
 		timeout: 5000,
 		async: false,
 		error: function (res) {
-			alert("保存失败");
+			/*alert("保存失败");*/
+			$.teninedialog({
+                title:"系统提示",
+                content:"保存失败"
+            });
 		},
 		success: function (res) {
-			alert("保存成功");
+			/*alert("保存成功");*/
+			$.teninedialog({
+                title:"系统提示",
+                content:"保存成功"
+            });
 			brandList();
 			$("#brand_edit_model").modal("hide");
 		}

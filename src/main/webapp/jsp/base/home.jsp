@@ -10,6 +10,7 @@
     </script>
     <script type="text/javascript" src="<%=request.getContextPath()%>/js/bootstrap/bootstrap.min.js"></script>
     <script type="text/javascript" src="<%=request.getContextPath()%>/js/base/home.js"></script>
+    <script type="text/javascript" src="<%=request.getContextPath()%>/js/bootstrap/jquery.bootstrap.teninedialog.v3.js"></script>
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/bootstrap/bootstrap.min.css" />
 </head>
 <body>

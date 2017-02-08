@@ -62,7 +62,11 @@ function deleteBrandById(id){
 		timeout: 5000,
 		async: false,
 		error: function (request) {
-			alert(request.responseText);
+			/*alert(request.responseText);*/
+			$.teninedialog({
+                title:"系统提示",
+                content:request.responseText
+            });
 		},
 		success: function (request) {
 			brandList();

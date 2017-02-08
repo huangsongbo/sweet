@@ -31,6 +31,8 @@ public class MyFilter implements Filter{
 			FilterChain filterChain) throws IOException, ServletException {
 		request = (HttpServletRequest) servletRequest;
 		response = (HttpServletResponse) servletResponse;
+		request.setCharacterEncoding("utf-8");
+		response.setCharacterEncoding("utf-8");
 		StringBuffer url = new StringBuffer(request.getRequestURI());
 		if(url.toString().endsWith(".jsp")||url.toString().endsWith(".js")||url.toString().endsWith(".css")){
 			//过滤jsp,js,css

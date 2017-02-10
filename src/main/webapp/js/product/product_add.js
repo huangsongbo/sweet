@@ -16,7 +16,14 @@ function brandList(){
             });
 		},
 		success: function (res) {
-			console.log(res);
+			/*console.log(res);*/
+			var htmlStr = "";
+			for (var index = 0; index < res.length; index++) {
+				var item = res[index];
+				htmlStr += "<option value=\""+item.id+"\">"+item.name+"</option>";
+			}
+			console.log(htmlStr);
+			$("#AddPageBrandSelect").html(htmlStr);
 		}
 	});
 }

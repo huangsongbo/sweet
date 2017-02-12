@@ -40,8 +40,8 @@ function updateBrand(){
                 title:"系统提示",
                 content:"保存成功"
             });
-			brandList();
 			$("#brand_edit_model").modal("hide");
+			brandList();
 		}
 	});
 }

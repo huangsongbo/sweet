@@ -13,10 +13,12 @@
 	<div class="modal-body">
 		<table>
 			<tr style="height: 50px">
-				<td style="width: 100px">品牌名称:</td><td style="width: 100px"><input type="text" name="name" /></td>
+				<td style="width: 100px">品牌名称:</td>
+				<td style="width: 100px"><input type="text" id="brand_add_form_name" name="name" /></td>
 			</tr>
 			<tr style="height: 50px">
-				<td style="width: 100px">描述:</td><td style="width: 100px"><input type="text" name="description"/></td>
+				<td style="width: 100px">描述:</td>
+				<td style="width: 100px"><input type="text" id="brand_add_form_description" name="description"/></td>
 			</tr>
 		</table>
 	</div>

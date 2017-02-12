@@ -30,7 +30,7 @@ public class BrandService {
 			brand.setModifierId(0L);
 		}
 		brand.setModifyTime(now);
-		return brandRepository.save(brand);
+		return brandRepository.saveV2(brand);
 	}
 
 	public int update(Brand brand){

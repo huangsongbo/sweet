@@ -21,7 +21,7 @@ function brandList(){
 			$.each(res,function(index,val){
 				$("#tableList").append("<tr><td>"+(index+1)+"</td><td>"+val.name+"</td>" +
 						"<td>"+val.description+"</td>" +
-								"<td><a onclick=\"brandEdit("+val.id+")\">编辑</a>&nbsp;&nbsp;<a onclick=\"deleteBrandById("+val.id+")\">删除</a></td></tr>");
+								"<td><a onclick=\"brandEdit("+val.id+")\">编辑</a>&nbsp;&nbsp;<a onclick=\"deleteBrandByIdCheck("+val.id+")\">删除</a></td></tr>");
 			});
 		}
 	});
@@ -51,7 +51,7 @@ function brandEdit(id){
 }
 
 /**
- * 删除品牌
+ * 删除品牌(点击)
  * @param id
  */
 function deleteBrandById(id){
@@ -69,7 +69,30 @@ function deleteBrandById(id){
             });
 		},
 		success: function (request) {
+			$.teninedialog({
+                title:"系统提示",
+                content:"删除成功"
+            });
 			brandList();
 		}
 	});
+}
+
+function deleteBrandByIdCheck(id){
+	$.teninedialog({
+        title:"系统提示",
+        content:"是否删除该条记录?",
+        showCloseButton:false,
+        otherButtons:["确定","取消"],
+        clickButton:function(sender,modal,index){
+        	$(this).closeDialog(modal);
+            if(index == 0){
+            	//确定
+            	deleteBrandById(id);
+            }else if(index == 1){
+            	//取消
+            	
+            }
+        }
+    });
 }

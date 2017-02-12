@@ -19,6 +19,7 @@ public class Brand extends BaseEntity implements Serializable{
 	private static final long serialVersionUID = 5650674369727005055L;
 
 	/*品牌名称*/
+	@Column(name = "name", unique = true, nullable = false)
 	private String name;
 	
 	/*描述*/

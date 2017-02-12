@@ -46,7 +46,8 @@ public class BrandRest {
 	
 	@RequestMapping(value="",method=RequestMethod.PUT)
 	public Object update(@ModelAttribute @Valid Brand brand){
-		return brandService.update(brand);
+		/*return brandService.update(brand);*/
+		return brandService.save(brand);
 	}
 	
 	@RequestMapping(value="/{id}",method=RequestMethod.DELETE)

@@ -18,6 +18,7 @@ function brandList(){
 		success: function (res) {
 			/*console.log(res);*/
 			var htmlStr = "";
+			htmlStr += "<option value=\"\">未选择</option>";
 			for (var index = 0; index < res.length; index++) {
 				var item = res[index];
 				htmlStr += "<option value=\""+item.id+"\">"+item.name+"</option>";

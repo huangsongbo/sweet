@@ -40,8 +40,17 @@ function saveBrand(){
                 title:"系统提示",
                 content:"保存成功"
             });
-			brandList();
 			$("#brand_add_model").modal("hide");
+			brandList();
+			clearInfo();
 		}
 	});
+}
+
+/**
+ * 清楚新增页面的信息
+ */
+function clearInfo(){
+	$("#brand_add_form_name").val("");
+	$("#brand_add_form_description").val("");
 }

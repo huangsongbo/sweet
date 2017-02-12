@@ -14,5 +14,5 @@ public interface BrandRepository extends JpaRepository<Brand, Long>{
 	@Modifying
 	@Query("update Brand b set b.name = :name,b.description = :description,b.modifyTime=:modifyTime where b.id = :id")
 	int update(@Param("id") Long id,@Param("name") String name,@Param("description") String description,@Param("modifyTime") Date modifyTime);
-	
+
 }

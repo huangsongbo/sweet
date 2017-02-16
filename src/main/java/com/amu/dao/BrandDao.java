@@ -1,4 +1,4 @@
-package com.amu.repository;
+package com.amu.dao;
 
 import java.util.Date;
 
@@ -9,7 +9,7 @@ import org.springframework.data.repository.query.Param;
 
 import com.amu.domain.Brand;
 
-public interface BrandRepository extends JpaRepository<Brand, Long>{
+public interface BrandDao extends JpaRepository<Brand, Long>{
 
 	@Modifying
 	@Query("update Brand b set b.name = :name,b.description = :description,b.modifyTime=:modifyTime where b.id = :id")

@@ -8,15 +8,15 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.amu.dao.BrandDao;
 import com.amu.domain.Brand;
-import com.amu.repository.BrandRepository;
 
 @Service
 @Transactional
 public class BrandService {
 
 	@Autowired
-	private BrandRepository brandRepository;
+	private BrandDao brandRepository;
 	
 	public Page<Brand> findAll(Pageable pageable){
 		return brandRepository.findAll(pageable);
@@ -30,7 +30,7 @@ public class BrandService {
 			brand.setModifierId(0L);
 		}
 		brand.setModifyTime(now);
-		return brandRepository.saveV2(brand);
+		return brandRepository.save(brand);
 	}
 
 	public int update(Brand brand){

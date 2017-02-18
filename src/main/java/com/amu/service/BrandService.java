@@ -16,10 +16,10 @@ import com.amu.domain.Brand;
 public class BrandService {
 
 	@Autowired
-	private BrandDao brandRepository;
+	private BrandDao brandDao;
 	
 	public Page<Brand> findAll(Pageable pageable){
-		return brandRepository.findAll(pageable);
+		return brandDao.findAll(pageable);
 	}
 
 	public Brand save(Brand brand) {
@@ -30,21 +30,25 @@ public class BrandService {
 			brand.setModifierId(0L);
 		}
 		brand.setModifyTime(now);
-		return brandRepository.save(brand);
+		return brandDao.save(brand);
 	}
 
 	public int update(Brand brand){
 		Date now =new Date();
 		brand.setModifyTime(now);
-		return brandRepository.update(brand.getId(),brand.getName(),brand.getDescription(),brand.getModifyTime());
+		return brandDao.update(brand.getId(),brand.getName(),brand.getDescription(),brand.getModifyTime());
 	}
 	
 	public Brand findOneById(Long id) {
-		return brandRepository.findOne(id);
+		return brandDao.findOne(id);
 	}
 
 	public void delete(Long id) {
-		brandRepository.delete(id);
+		brandDao.delete(id);
+	}
+
+	public int saveCustom(Brand brand) {
+		return brandDao.saveCustom(brand);
 	}
 	
 }

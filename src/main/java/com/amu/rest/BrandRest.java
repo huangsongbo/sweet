@@ -56,4 +56,9 @@ public class BrandRest {
 		return new ResponseEntity<String>("删除成功", HttpStatus.OK);
 	}
 	
+	@RequestMapping(value="/saveV2",method=RequestMethod.POST)
+	public Object saveV2(Brand brand){
+		return brandService.saveCustom(brand);
+	}
+	
 }

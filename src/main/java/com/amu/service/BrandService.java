@@ -24,11 +24,9 @@ public class BrandService {
 
 	public Brand save(Brand brand) {
 		Date now =new Date();
-		if(brand.getId()==null||brand.getId()<1){
-			brand.setCreateTime(now);
-			brand.setCreatorId(0L);
-			brand.setModifierId(0L);
-		}
+		brand.setCreateTime(now);
+		brand.setCreatorId(0L);
+		brand.setModifierId(0L);
 		brand.setModifyTime(now);
 		return brandDao.save(brand);
 	}
@@ -36,7 +34,8 @@ public class BrandService {
 	public int update(Brand brand){
 		Date now =new Date();
 		brand.setModifyTime(now);
-		return brandDao.update(brand.getId(),brand.getName(),brand.getDescription(),brand.getModifyTime());
+		/*return brandDao.update(brand.getId(),brand.getName(),brand.getDescription(),brand.getModifyTime());*/
+		return brandDao.updateCustom(brand);
 	}
 	
 	public Brand findOneById(Long id) {
@@ -46,9 +45,9 @@ public class BrandService {
 	public void delete(Long id) {
 		brandDao.delete(id);
 	}
-
-	public int saveCustom(Brand brand) {
-		return brandDao.saveCustom(brand);
+	
+	public int updateCustom(Brand brand) {
+		return brandDao.updateCustom(brand);
 	}
 	
 }

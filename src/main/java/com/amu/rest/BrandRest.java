@@ -46,19 +46,13 @@ public class BrandRest {
 	
 	@RequestMapping(value="",method=RequestMethod.PUT)
 	public Object update(@ModelAttribute @Valid Brand brand){
-		/*return brandService.update(brand);*/
-		return brandService.save(brand);
+		return brandService.update(brand);
 	}
 	
 	@RequestMapping(value="/{id}",method=RequestMethod.DELETE)
 	public Object delete(@PathVariable("id") Long id){
 		brandService.delete(id);
 		return new ResponseEntity<String>("删除成功", HttpStatus.OK);
-	}
-	
-	@RequestMapping(value="/saveV2",method=RequestMethod.POST)
-	public Object saveV2(Brand brand){
-		return brandService.saveCustom(brand);
 	}
 	
 }

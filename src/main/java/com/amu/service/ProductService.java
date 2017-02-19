@@ -1,5 +1,6 @@
 package com.amu.service;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,10 +16,24 @@ import com.amu.domain.Product;
 public class ProductService {
 
 	@Autowired
-	private ProductDao productRepository;
+	private ProductDao productDao;
 	
 	public List<Product> findAll(Pageable pageable){
-		return productRepository.findAll(pageable).getContent();
+		return productDao.findAll(pageable).getContent();
+	}
+
+	/**
+	 * 保存产品
+	 * @param product
+	 * @return
+	 */
+	public Object save(Product product) {
+		Date now = new Date();
+		product.setCreateTime(now);
+		product.setModifyTime(now);
+		product.setCreatorId(0L);
+		product.setModifierId(0L);
+		return productDao.save(product);
 	}
 	
 }

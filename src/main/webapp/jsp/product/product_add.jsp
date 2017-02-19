@@ -9,32 +9,37 @@
 			新增产品
 		</h4>
 	</div>
-	<div class="modal-body">
-		<table>
-			<tr style="height: 50px">
-				<td style="width: 100px">名称:</td><td style="width: 100px"><input type="text"/></td>
-			</tr>
-			<tr style="height: 50px">
-				<td style="width: 100px">品牌:</td>
-				<td style="width: 100px">
-					<select class="form-control" id="AddPageBrandSelect">
-					<!-- <option>test1</option><option>test2</option> -->
-					</select>
-				</td>
-			</tr>
-			<tr style="height: 50px">
-				<td style="width: 100px">港币($):</td><td style="width: 100px"><input type="text"/></td>
-			</tr>
-			<tr style="height: 50px">
-				<td style="width: 100px">描述:</td><td style="width: 100px"><input type="text"/></td>
-			</tr>
-		</table>
-	</div>
-	<div class="modal-footer">
-		<button type="button" class="btn btn-default" data-dismiss="modal">关闭
-		</button>
-		<button type="button" class="btn btn-primary">
-			提交
-		</button>
-	</div>
+	<form id="product_add_form">
+		<div class="modal-body">
+			<table>
+				<tr style="height: 50px">
+					<td style="width: 100px">名称:</td>
+					<td style="width: 100px"><input type="text" id="product_add_form_name" name="name"/></td>
+				</tr>
+				<tr style="height: 50px">
+					<td style="width: 100px">品牌:</td>
+					<td style="width: 100px">
+						<select class="form-control" id="AddPageBrandSelect" name="brand.id">
+						<!-- <option>test1</option><option>test2</option> -->
+						</select>
+					</td>
+				</tr>
+				<tr style="height: 50px">
+					<td style="width: 100px">港币($):</td>
+					<td style="width: 100px"><input type="text" id="product_add_form_hkd" name="hkd"/></td>
+				</tr>
+				<tr style="height: 50px">
+					<td style="width: 100px">描述:</td>
+					<td style="width: 100px"><input type="text" id="product_add_form_description" name="description"/></td>
+				</tr>
+			</table>
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+			</button>
+			<button type="submit" class="btn btn-primary">
+				提交
+			</button>
+		</div>
+	</form>
 </div>

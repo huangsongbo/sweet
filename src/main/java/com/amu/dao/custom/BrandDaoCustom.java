@@ -9,6 +9,6 @@ import com.amu.domain.Brand;
  */
 public interface BrandDaoCustom {
 
-	int saveCustom(Brand brand);
+	int updateCustom(Brand brand);
 	
 }

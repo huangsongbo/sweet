@@ -9,7 +9,7 @@
 		</button>
 		<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
 			<li role="presentation">
-		    	<a role="menuitem" tabindex="-1" data-toggle="modal" data-target="#myModal">新增</a>
+		    	<a role="menuitem" tabindex="-1" data-toggle="modal" data-target="#product_add_model">新增</a>
 		    </li>
 		</ul>
 	</div>		
@@ -34,7 +34,7 @@
 	</table>
 </div>
 <!-- 新增商品弹窗 -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="product_add_model" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 <div class="modal-dialog">
 	<!-- 新增商品页面 -->
 	<%@ include file="../product/product_add.jsp" %>

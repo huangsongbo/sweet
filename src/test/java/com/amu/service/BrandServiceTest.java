@@ -29,7 +29,7 @@ public class BrandServiceTest {
 		Brand brand = new Brand();
 		brand.setId(7L);
 		brand.setName("测试品牌");
-		int num = brandService.saveCustom(brand);
+		int num = brandService.updateCustom(brand);
 		System.out.println(num);
 	}
 	

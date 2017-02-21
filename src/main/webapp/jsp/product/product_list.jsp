@@ -12,7 +12,7 @@
 		    	<a role="menuitem" tabindex="-1" data-toggle="modal" data-target="#product_add_model">新增</a>
 		    </li>
 		</ul>
-	</div>		
+	</div>
 	</div>
 </div>
 		

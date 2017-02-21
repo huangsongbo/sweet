@@ -1,6 +1,6 @@
 jQuery(document).ready(function() {
 	// 下拉品牌
-	brandList();
+	brandSelect();
 	// 提交数据(保存)
 	$("#product_add_form").validate({
 		rules:{
@@ -22,7 +22,7 @@ jQuery(document).ready(function() {
 /**
  * 下拉品牌
  */
-function brandList(){
+function brandSelect(){
 	$.ajax({
 		type: "GET",
 		datatype: "json",
@@ -72,8 +72,8 @@ function saveProduct(){
                 title:"系统提示",
                 content:"保存成功"
             });
-			$("#brand_add_model").modal("hide");
-			brandList();
+			$("#product_add_model").modal("hide");
+			productList();
 			clearInfo();
 		}
 	});

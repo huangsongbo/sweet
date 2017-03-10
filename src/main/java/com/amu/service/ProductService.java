@@ -35,5 +35,13 @@ public class ProductService {
 		product.setModifierId(0L);
 		return productDao.save(product);
 	}
+
+	public List<Product> findAllOrderByIdDesc() {
+		return productDao.findAllOrderByIdDesc();
+	}
+
+	public Product findOneById(Long id) {
+		return productDao.findOne(id);
+	}
 	
 }

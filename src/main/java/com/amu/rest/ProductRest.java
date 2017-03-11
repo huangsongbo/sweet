@@ -5,10 +5,6 @@ import java.util.List;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
-import org.springframework.data.domain.Sort.Direction;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -98,6 +94,17 @@ public class ProductRest {
 		productService.update(product);
 		return new ResponseEntity<String>("success", HttpStatus.OK);
 		/*return productService.update(product);*/
+	}
+	
+	/**
+	 * 
+	 * @param id
+	 * @return
+	 */
+	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+	public Object deleteById(@PathVariable("id") Long id){
+		productService.deleteById(id);
+		return new ResponseEntity<String>("success", HttpStatus.OK);
 	}
 	
 }

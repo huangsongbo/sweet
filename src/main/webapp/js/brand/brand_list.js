@@ -73,7 +73,6 @@ function deleteBrandById(id){
                 title:"系统提示",
                 content:"删除成功"
             });
-			brandList();
 		}
 	});
 }
@@ -87,10 +86,12 @@ function deleteBrandByIdCheck(id){
         clickButton:function(sender,modal,index){
         	$(this).closeDialog(modal);
             if(index == 0){
-            	//确定
+            	// 确定
             	deleteBrandById(id);
+            	// 重新加载品牌列表
+            	brandList();
             }else if(index == 1){
-            	//取消
+            	// 取消
             	
             }
         }

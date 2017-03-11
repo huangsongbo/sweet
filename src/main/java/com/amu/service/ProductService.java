@@ -44,10 +44,14 @@ public class ProductService {
 		return productDao.findOne(id);
 	}
 
-	public Object update(Product product) {
+	public Product update(Product product) {
 		Date now = new Date();
 		product.setModifyTime(now);
 		return productDao.save(product);
+	}
+	
+	public void deleteById(Long id){
+		productDao.delete(id);
 	}
 	
 }

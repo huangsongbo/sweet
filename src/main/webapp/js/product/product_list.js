@@ -24,7 +24,10 @@ function productList(){
 				}
 				$("#tableList").append("<tr><td>"+(index+1)+"</td><td>"+val.name+"</td>" +
 						"<td>"+brandName+"</td>" +
-						"<td>"+val.hkd+"</td><td>"+val.description+"</td><td><a onclick=\"productEdit("+val.id+")\">编辑</a></td></tr>");
+						"<td>"+val.hkd+"</td>" +
+						"<td>"+val.description+"</td>" +
+						"<td><a onclick=\"productEdit("+val.id+")\">编辑</a>&nbsp;&nbsp;<a onclick=\"productDeleteClick("+val.id+")\">删除</a></td>" +
+						"</tr>");
 			});
 		}
 	});
@@ -95,6 +98,56 @@ function brandSelect(value, selectId){
 			/*console.log(htmlStr);*/
 			/*$("#product_add_form_brand_select").html(htmlStr);*/
 			$("#"+selectId).html(htmlStr);
+		}
+	});
+}
+
+/**
+ * 点击产品删除
+ * @param id
+ */
+function productDeleteClick(id){
+	$.teninedialog({
+        title:"系统提示",
+        content:"是否删除该条记录?",
+        showCloseButton:false,
+        otherButtons:["确定","取消"],
+        clickButton:function(sender,modal,index){
+        	$(this).closeDialog(modal);
+            if(index == 0){
+            	//确定
+            	deleteProductById(id);
+            	productList();
+            }else if(index == 1){
+            	//取消
+            	
+            }
+        }
+    });
+}
+
+/**
+ * 产品删除
+ * @param id
+ */
+function deleteProductById(id){
+	$.ajax({
+		type: "DELETE",
+		datatype: "json",
+		url:cPath+"/products/"+id,
+		timeout: 5000,
+		async: false,
+		error: function (request) {
+			$.teninedialog({
+                title:"系统提示",
+                content:request.responseText
+            });
+		},
+		success: function (request) {
+			$.teninedialog({
+                title:"系统提示",
+                content:"删除成功"
+            });
 		}
 	});
 }

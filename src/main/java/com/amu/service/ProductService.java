@@ -43,5 +43,11 @@ public class ProductService {
 	public Product findOneById(Long id) {
 		return productDao.findOne(id);
 	}
+
+	public Object update(Product product) {
+		Date now = new Date();
+		product.setModifyTime(now);
+		return productDao.save(product);
+	}
 	
 }

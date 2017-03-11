@@ -2,7 +2,7 @@ jQuery(document).ready(function() {
 	// 下拉品牌
 	brandSelect(null, "product_edit_form_brand_select");
 	// 提交数据(保存)
-	$("#product_add_form").validate({
+	$("#product_edit_form").validate({
 		rules:{
 			name:{required:true}
 		},
@@ -11,7 +11,7 @@ jQuery(document).ready(function() {
 		},
 		submitHandler: function (form) {
 			/*alert("提交成功");*/
-			saveProduct();
+			updateProduct();
         },
         errorPlacement: function(error, element) {
             error.appendTo(element.parent());  
@@ -24,10 +24,10 @@ jQuery(document).ready(function() {
  */
 function updateProduct(){
 	$.ajax({
-		type: "POST",
+		type: "PUT",
 		datatype: "json",
 		url: cPath+"/products" ,
-		data: $("#product_add_form").serialize(),
+		data: $("#product_edit_form").serialize(),
 		timeout: 5000,
 		async: false,
 		error: function (res) {
@@ -42,9 +42,8 @@ function updateProduct(){
                 title:"系统提示",
                 content:"保存成功"
             });
-			$("#product_add_model").modal("hide");
+			$("#product_edit_model").modal("hide");
 			productList();
-			clearInfo();
 		}
 	});
 }
@@ -53,7 +52,5 @@ function updateProduct(){
  * 清楚新增页面的信息
  */
 function clearInfo(){
-	$("#product_add_form_name").val("");
-	$("#product_add_form_hkd").val("");
-	$("#product_add_form_description").val("");
+
 }

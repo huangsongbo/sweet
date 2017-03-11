@@ -9,7 +9,7 @@
 			编辑产品
 		</h4>
 	</div>
-	<form id="product_add_form">
+	<form id="product_edit_form">
 		<!-- 产品id -->
 		<input type = "hidden" id = "product_edit_id" name = "id">
 		<div class="modal-body">
@@ -23,7 +23,7 @@
 					<td style="width: 100px">
 						<!-- 隐藏属性:该产品选择的品牌id -->
 						<!-- <input type = "hidden" id = "product_edit_form_brand_id"/> -->
-						<select class="form-control" id="product_edit_form_brand_select" name="brand.id">
+						<select class="form-control" id="product_edit_form_brand_select" name="brandId">
 						<!-- <option>test1</option><option>test2</option> -->
 						</select>
 					</td>

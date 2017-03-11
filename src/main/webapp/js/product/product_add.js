@@ -20,43 +20,6 @@ jQuery(document).ready(function() {
 })
 
 /**
- * 下拉品牌
- * @param value 默认选项
- * @param selectId selectId
- */
-function brandSelect(value, selectId){
-	$.ajax({
-		type: "GET",
-		datatype: "json",
-		url: cPath+"/brands" ,
-		timeout: 5000,
-		async: false,
-		error: function (res) {
-			$.teninedialog({
-                title:"系统提示",
-                content:"系统异常"
-            });
-		},
-		success: function (res) {
-			/*console.log(res);*/
-			var htmlStr = "";
-			htmlStr += "<option value=\"\">未选择</option>";
-			for (var index = 0; index < res.length; index++) {
-				var item = res[index];
-				if(value != null && value == item.id){
-					htmlStr += "<option value = \""+item.id+"\" selected = \"selected\">"+item.name+"</option>";
-				}else{
-					htmlStr += "<option value=\""+item.id+"\">"+item.name+"</option>";
-				}
-			}
-			/*console.log(htmlStr);*/
-			/*$("#product_add_form_brand_select").html(htmlStr);*/
-			$("#"+selectId).html(htmlStr);
-		}
-	});
-}
-
-/**
  * 保存品牌
  */
 function saveProduct(){
@@ -93,5 +56,5 @@ function clearInfo(){
 	$("#product_add_form_name").val("");
 	$("#product_add_form_hkd").val("");
 	$("#product_add_form_description").val("");
-	$("#product_add_form_brand_select").val("");
+	$("#product_add_form_brand_select").val("-1");
 }

@@ -10,6 +10,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
+import org.hibernate.annotations.DynamicUpdate;
+
 /**
  * 商品
  * @author huangsongbo
@@ -17,6 +19,7 @@ import javax.validation.constraints.Size;
  */
 @Entity
 @Table(name="product")
+@DynamicUpdate(true)
 public class Product extends BaseEntity implements Serializable{
 
 	private static final long serialVersionUID = -2054700575022115114L;

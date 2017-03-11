@@ -16,8 +16,14 @@ function productList(){
 		success: function (res) {
 			$("#tableList").html("");
 			$.each(res,function(index,val){
+				var brandName = "";
+				if(val.brand == null){
+					brandName = "未选择";
+				}else{
+					brandName = val.brand.name;
+				}
 				$("#tableList").append("<tr><td>"+(index+1)+"</td><td>"+val.name+"</td>" +
-						"<td>"+val.brand.name+"</td>" +
+						"<td>"+brandName+"</td>" +
 						"<td>"+val.hkd+"</td><td>"+val.description+"</td><td><a onclick=\"productEdit("+val.id+")\">编辑</a></td></tr>");
 			});
 		}
@@ -44,7 +50,13 @@ function productEdit(id){
 			$("#product_edit_name").val(request.name);
 			$("#product_eidt_hkd").val(request.hkd);
 			$("#product_eidt_description").val(request.description);
-			$("#product_edit_form_brand_select").val(request.brand.id);
+			// 品牌处理(非空处理) ->start
+			var brandId = -1;
+			if(request.brand != null){
+				brandId = request.brand.id
+			}
+			// 品牌处理(非空处理) ->end
+			$("#product_edit_form_brand_select").val(brandId);
 			$("#product_edit_model").modal("show");
 		}
 	});
@@ -71,7 +83,7 @@ function brandSelect(value, selectId){
 		success: function (res) {
 			/*console.log(res);*/
 			var htmlStr = "";
-			htmlStr += "<option value=\"\">未选择</option>";
+			htmlStr += "<option value=\"-1\">未选择</option>";
 			for (var index = 0; index < res.length; index++) {
 				var item = res[index];
 				if(value != null && value == item.id){

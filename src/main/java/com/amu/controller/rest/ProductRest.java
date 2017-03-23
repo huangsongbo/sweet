@@ -1,4 +1,4 @@
-package com.amu.rest;
+package com.amu.controller.rest;
 
 import java.util.List;
 

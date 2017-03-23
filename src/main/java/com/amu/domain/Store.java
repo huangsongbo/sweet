@@ -7,25 +7,28 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
+import org.hibernate.annotations.DynamicUpdate;
+
 /**
- * 品牌
+ * 门店
  * @author huangsongbo
  *
  */
 @Entity
-@Table(name="brand")
-public class Brand extends BaseEntity implements Serializable{
+@Table(name = "store")
+@DynamicUpdate(true)
+public class Store extends BaseEntity implements Serializable{
 
-	private static final long serialVersionUID = 5650674369727005055L;
+	private static final long serialVersionUID = 447770631486336358L;
 
-	/*品牌名称*/
+	/**门店名称*/
 	@Column(name = "name", unique = true, nullable = false, length = 100)
-	@Size(min=1,max=100)
+	@Size(min = 1, max = 100)
 	private String name;
 	
-	/*描述*/
-	@Column(name="description",length=1000)
-	@Size(min=0,max=1000)
+	/**描述*/
+	@Column(name = "description", length = 1000)
+	@Size(max = 1000)
 	private String description;
 
 	public String getName() {

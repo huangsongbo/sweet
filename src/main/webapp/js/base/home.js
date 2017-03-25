@@ -1,5 +1,10 @@
 function tableList(type){
-	var url=cPath+"/"+type+"Page";
+	var url = "";
+	if(type == "store"){
+		url = cPath + "/jsp/store/jspList.htm"
+	}else{
+		url=cPath+"/"+type+"Page";
+	}
 	$.ajax({
 		type: "GET",
 		datatype: "json",

@@ -27,7 +27,7 @@ public class ProductService {
 	 * @param product
 	 * @return
 	 */
-	public Object save(Product product) {
+	public Product save(Product product) {
 		Date now = new Date();
 		product.setCreateTime(now);
 		product.setModifyTime(now);

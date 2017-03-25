@@ -10,7 +10,7 @@
 			</button>
 			<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
 				<li role="presentation">
-			    	<a role="menuitem" tabindex="-1" data-toggle="modal" data-target="#product_add_model">新增</a>
+			    	<a role="menuitem" tabindex="-1" data-toggle="modal" data-target="#store_add_model">新增</a>
 			    </li>
 			</ul>
 		</div>
@@ -41,3 +41,12 @@
 		</tbody>
 	</table>
 </div>
+<div id = "jspEnd"></div>
+<!-- 新增商品弹窗 -->
+<div class="modal fade" id="store_add_model" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+	<!-- 新增商品页面 -->
+	<%@ include file="../store/store_add.jsp" %>
+</div>
+</div>
+<!-- 新增商品弹窗->end -->

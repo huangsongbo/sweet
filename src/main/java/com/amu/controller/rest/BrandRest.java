@@ -30,7 +30,7 @@ public class BrandRest {
 	}
 	
 	@RequestMapping(value="",method=RequestMethod.POST)
-	public Object save(@ModelAttribute @Valid Brand brand){
+	public Object create(@ModelAttribute @Valid Brand brand){
 		brandService.save(brand);
 		return brand;
 	}

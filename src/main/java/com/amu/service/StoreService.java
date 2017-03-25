@@ -1,5 +1,6 @@
 package com.amu.service;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,21 @@ public class StoreService {
 	
 	public List<Store> findAll() {
 		return storeDao.findAll();
+	}
+
+	/**
+	 * 新增store
+	 * @author huangsongbo
+	 * @param store
+	 * @return
+	 */
+	public Store create(Store store) {
+		Date now = new Date();
+		store.setCreateTime(now);
+		store.setModifyTime(now);
+		store.setCreatorId(0L);
+		store.setModifierId(0L);
+		return storeDao.save(store);
 	}
 
 }

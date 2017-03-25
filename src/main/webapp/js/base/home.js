@@ -1,4 +1,4 @@
-function tableList(type){
+function tableList(type, listType){
 	var url = "";
 	if(type == "store"){
 		url = cPath + "/jsp/store/jspList.htm"
@@ -16,7 +16,17 @@ function tableList(type){
 			
 		},
 		success: function (res) {
-			$("#mainTable").html(res);
+			if("list" == listType){
+				var startIndex = res.toString().indexOf("<tbody id=\"tableList\" >") + "<tbody id=\"tableList\" >".length;
+				console.log("startIndex = " + startIndex);
+				/*var endIndex = res.toString().lastIndexOf("</tbody></table></div><div id = \"jspEnd\"></div>");*/
+				var endIndex = res.toString().lastIndexOf("</tbody>");
+				console.log("endIndex = " + endIndex);
+				console.log(res.toString().substring(startIndex, endIndex));
+				$("#tableList").html(res.toString().substring(startIndex, endIndex));
+			}else{
+				$("#mainTable").html(res);
+			}
 		}
 	});
 }

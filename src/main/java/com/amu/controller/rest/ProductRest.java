@@ -50,7 +50,7 @@ public class ProductRest {
 	 * @return
 	 */
 	@RequestMapping(value = "", method = RequestMethod.POST)
-	public Object save(@Valid Product product){
+	public Object create(@Valid Product product){
 		return productService.save(product);
 	}
 	

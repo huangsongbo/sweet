@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <script type="text/javascript" src="<%=request.getContextPath()%>/js/product/product_list.js"></script>
 <div class="row">
-	<div class="col-sm-4"><h2>商品列表</h2></div>
+	<div class="col-sm-4"><h2>商品 <a href = "#" onclick = "">列表</a>/<a href = "#" onclick = "">价目</a></h2></div>
 	<div class="col-sm-4">
 	<div class="dropdown">
 		<button type="button" class="btn dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" style="margin-top:20px">功能区

@@ -21,7 +21,7 @@ function brandList(){
 			$.each(res,function(index,val){
 				$("#tableList").append("<tr><td>"+(index+1)+"</td><td>"+val.name+"</td>" +
 						"<td>"+val.description+"</td>" +
-								"<td><a onclick=\"brandEdit("+val.id+")\">编辑</a>&nbsp;&nbsp;<a onclick=\"deleteBrandByIdCheck("+val.id+")\">删除</a></td></tr>");
+								"<td><a href = \"#\" onclick=\"brandEdit("+val.id+")\">编辑</a>&nbsp;&nbsp;<a href = \"#\" onclick=\"deleteBrandByIdCheck("+val.id+")\">删除</a></td></tr>");
 			});
 		}
 	});

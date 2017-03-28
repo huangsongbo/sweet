@@ -35,7 +35,7 @@
 					<td>${status.count }</td>
 					<td>${item.name }</td>
 					<td>${item.description }</td>
-					<td>编辑</td>
+					<td><a href = "#" onclick= "">编辑</a>&nbsp;&nbsp;</td>
 				</tr>
 			</c:forEach>
 		</tbody>

@@ -26,7 +26,7 @@ function productList(){
 						"<td>"+brandName+"</td>" +
 						"<td>"+val.hkd+"</td>" +
 						"<td>"+val.description+"</td>" +
-						"<td><a onclick=\"productEdit("+val.id+")\">编辑</a>&nbsp;&nbsp;<a onclick=\"productDeleteClick("+val.id+")\">删除</a></td>" +
+						"<td><a href = \"#\" onclick=\"productEdit("+val.id+")\">编辑</a>&nbsp;&nbsp;<a href = \"#\" onclick=\"productDeleteClick("+val.id+")\">删除</a></td>" +
 						"</tr>");
 			});
 		}

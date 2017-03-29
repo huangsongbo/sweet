@@ -20,6 +20,7 @@
 					<td style="width: 100px">品牌:</td>
 					<td style="width: 100px">
 						<select class="form-control" id="product_add_form_brand_select" name="brand.id">
+						<!-- <option>test1</option><option>test2</option> -->
 						</select>
 					</td>
 				</tr>

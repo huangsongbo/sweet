@@ -21,7 +21,6 @@ function tableList(type, listType){
 			if("list" == listType){
 				var startIndex = res.toString().indexOf("<tbody id=\"tableList\" >") + "<tbody id=\"tableList\" >".length;
 				console.log("startIndex = " + startIndex);
-				/*var endIndex = res.toString().lastIndexOf("</tbody></table></div><div id = \"jspEnd\"></div>");*/
 				var endIndex = res.toString().lastIndexOf("</tbody>");
 				console.log("endIndex = " + endIndex);
 				console.log(res.toString().substring(startIndex, endIndex));

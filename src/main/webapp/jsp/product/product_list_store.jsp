@@ -48,7 +48,7 @@
 <div class="modal fade" id="product_add_model" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 <div class="modal-dialog">
 	<!-- 新增商品页面 -->
-	<%@ include file="../product/product_add.jsp" %>
+	<%@ include file="../product/product_add_store.jsp" %>
 </div>
 </div>
 <!-- 新增商品弹窗->end -->

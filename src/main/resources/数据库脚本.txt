@@ -1,0 +1,2 @@
+// product_price_info索引
+alter table product_price_info add index idx_product_price_info_product_id(product_id);

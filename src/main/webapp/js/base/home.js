@@ -2,6 +2,8 @@ function tableList(type, listType){
 	var url = "";
 	if(type == "store"){
 		url = cPath + "/jsp/store/jspList.htm"
+	}else if(type == "productStore"){
+		url = cPath + "/jsp/product/productStoreList.htm"
 	}else{
 		url=cPath+"/"+type+"Page";
 	}

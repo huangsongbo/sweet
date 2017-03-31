@@ -42,7 +42,7 @@ function saveProduct(){
                 content:"保存成功"
             });
 			$("#product_add_model").modal("hide");
-			tableList("productStore");
+			tableList("productStore", "list");
 			clearInfo();
 		}
 	});

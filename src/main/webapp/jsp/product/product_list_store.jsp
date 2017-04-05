@@ -38,7 +38,7 @@
 					<c:forEach var="itemPrice" items="${item.priceList }">
 						<td>${itemPrice }</td>
 					</c:forEach>
-					<td>编辑</td>
+					<td><a href = "#" onclick= "productStoreInfoEdit(${item.id})">编辑</a>&nbsp;&nbsp;</td>
 				</tr>
 			</c:forEach>
 		</tbody>

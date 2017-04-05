@@ -48,7 +48,7 @@ function productEdit(id){
 			alert(request.responseText);
 		},
 		success: function (request) {
-			console.log(request);
+			/*console.log(request);*/
 			$("#product_edit_id").val(request.id);
 			$("#product_edit_name").val(request.name);
 			$("#product_eidt_hkd").val(request.hkd);

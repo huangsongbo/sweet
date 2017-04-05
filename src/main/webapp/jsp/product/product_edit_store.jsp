@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<script type="text/javascript" src="<%=request.getContextPath()%>/js/product/product_edit.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath()%>/js/product/product_edit_store.js"></script>
 <div class="modal-content">
 	<div class="modal-header">
 		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">

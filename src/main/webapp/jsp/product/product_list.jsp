@@ -45,7 +45,7 @@
 <div class="modal fade" id="product_edit_model" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
 		<!-- 编辑商品页面 -->
-		<%@ include file="../product/product_edit.jsp" %>
+		<%@ include file="../product/product_edit_store.jsp" %>
 	</div>
 </div>
 <!-- 编辑商品弹窗->end -->

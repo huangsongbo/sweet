@@ -36,3 +36,23 @@ function brandSelect(value, selectId){
 		}
 	});
 }
+
+/**
+ * 编辑产品在各门店的价格
+ * @param productId
+ */
+function productStoreInfoEdit(productId){
+	$.ajax({
+		type: "GET",
+		datatype: "json",
+		url:cPath+"/jsp/product/productStoreInfoEdit?id="+productId,
+		timeout: 5000,
+		async: false,
+		error: function (request) {
+			alert(request.responseText);
+		},
+		success: function (request) {
+			
+		}
+	});
+}

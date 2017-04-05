@@ -23,7 +23,7 @@ function saveStore(){
 	$.ajax({
 		type: "POST",
 		datatype: "json",
-		url: cPath+"/store" ,
+		url: cPath+"/stores" ,
 		data: $("#store_add_form").serialize(),
 		timeout: 5000,
 		async: false,

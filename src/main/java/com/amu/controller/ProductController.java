@@ -56,8 +56,8 @@ public class ProductController {
 			priceListNew.addAll(priceList);
 			List<ProductPriceInfo> productPriceInfoList = product.getProductPriceInfoList();
 			for(ProductPriceInfo productPriceInfo : productPriceInfoList){
-				if(storeIdForIndexMap.containsKey(productPriceInfo.getStoreId())){
-					priceListNew.set(storeIdForIndexMap.get(productPriceInfo.getStoreId()), productPriceInfo.getPrice());
+				if(storeIdForIndexMap.containsKey(productPriceInfo.getStore().getId())){
+					priceListNew.set(storeIdForIndexMap.get(productPriceInfo.getStore().getId()), productPriceInfo.getPrice());
 				}
 			}
 			product.setPriceList(priceListNew);
@@ -66,6 +66,13 @@ public class ProductController {
 		request.setAttribute("storeNameList", storeNameList);
 		request.setAttribute("list", productList);
 		return "/jsp/product/product_list_store.jsp";
+	}
+	
+	@RequestMapping("/productStoreInfoEdit")
+	public String productStoreInfoEdit(Long id){
+		Product product = productService.findOneById(id);
+		product.getProductPriceInfoList().size();
+		return null;
 	}
 	
 }

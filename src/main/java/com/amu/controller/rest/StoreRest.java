@@ -13,7 +13,7 @@ import com.amu.domain.Store;
 import com.amu.service.StoreService;
 
 @RestController
-@RequestMapping("/store")
+@RequestMapping("/stores")
 public class StoreRest {
 
 	@Autowired
